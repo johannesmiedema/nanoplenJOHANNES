@@ -1,4 +1,4 @@
 library(testthat)
-library(nanoplen)
+library(nanoplenJOHANNES)
 
-test_check("nanoplen")
+test_check("nanoplenJOHANNES")
