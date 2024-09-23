@@ -72,7 +72,7 @@ nanoplen <- function(data_file,
     
     # Add condition column from metadata
     data_file = merge(data_file, metadata, by="lib_id")[,1:4]
-    
+    print("MODIFIED BY JOHANNES")
     if (test == "w") {
         levels = levels(metadata$condition)
         logscale = FALSE
@@ -81,6 +81,7 @@ nanoplen <- function(data_file,
     }
     
     # Relevel data_file$condition to use baseline string
+    print(baseline)
     data_file = within(data_file, condition <- relevel(factor(condition), ref = baseline))
     
     outres = diff_length(data_file, test, params, logscale, baseline)
