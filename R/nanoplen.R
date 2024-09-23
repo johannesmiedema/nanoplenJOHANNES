@@ -78,6 +78,8 @@ nanoplen <- function(data_file,
     print(data_file)
     # Add condition column from metadata
     data_file = merge(data_file, metadata, by="lib_id")[,1:4]
+    print("BREAK four!")
+    print(data_file)
     print("MODIFIED BY JOHANNES")
     if (test == "w") {
         levels = levels(metadata$condition)
