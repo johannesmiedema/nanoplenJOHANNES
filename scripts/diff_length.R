@@ -4,7 +4,7 @@
 # 
 
 suppressPackageStartupMessages(library(optparse))
-library(nanoplen)
+library(nanoplenJOHANNES)
 
 option_list <- list(
     make_option(c("-d","--data_path"),
