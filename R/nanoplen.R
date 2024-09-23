@@ -49,7 +49,8 @@ nanoplen <- function(data_file,
     # Can omit this step if previous output names columns consistently
     colnames(data_file) = c("lib_id","name","length")
     colnames(metadata)[1:2] = c("lib_id", "condition")
-    
+
+    print(data_file)
     # checking if model parameters are in metadata
     if (!is.null(params)) {
         vars = unique(unlist(strsplit(strsplit(params,"\\+")[[1]], "\\*")))
