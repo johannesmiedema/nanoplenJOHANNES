@@ -50,7 +50,6 @@ nanoplen <- function(data_file,
     colnames(data_file) = c("lib_id","name","length")
     colnames(metadata)[1:2] = c("lib_id", "condition")
 
-    print(data_file)
     # checking if model parameters are in metadata
     if (!is.null(params)) {
         vars = unique(unlist(strsplit(strsplit(params,"\\+")[[1]], "\\*")))
@@ -59,10 +58,15 @@ nanoplen <- function(data_file,
             stop(sprintf("Model parameters not in metadata: %s",paste(vars[!vars_in_meta], collapse = " ")))
         }
     }
-    
+    print("BREAK ONE!")
+    print(data_file)
     # Remove rows with reported length 0. They should not be there anyway.
     data_file = data_file[data_file$length > 0,]
-    
+    print("BREAK TWO!")
+    print(data_file)
+
+
+  
     # If normalizing, check if norm_group column is in metadata
     if (norm) {
         if (!("norm_group" %in% colnames(metadata))) {
@@ -70,7 +74,8 @@ nanoplen <- function(data_file,
         }
         data_file = run_adjust_norm(data_file, metadata)
     }
-    
+    print("BREAK three!")
+    print(data_file)
     # Add condition column from metadata
     data_file = merge(data_file, metadata, by="lib_id")[,1:4]
     print("MODIFIED BY JOHANNES")
