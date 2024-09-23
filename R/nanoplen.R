@@ -82,7 +82,7 @@ nanoplen <- function(data_file,
     
     # Relevel data_file$condition to use baseline string
     print(baseline)
-    print(data_file$condition)
+    print(data_file)
     data_file = within(data_file, condition <- relevel(factor(condition), ref = baseline))
     print("We want to read this line Johannes")
     outres = diff_length(data_file, test, params, logscale, baseline)
