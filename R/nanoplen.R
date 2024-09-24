@@ -75,7 +75,8 @@ nanoplen <- function(data_file,
         data_file = run_adjust_norm(data_file, metadata)
     }
     print("BREAK three!")
-    print(data_file)
+    print(head(data_file))
+    print(head(metadata))
     # Add condition column from metadata
     data_file = merge(data_file, metadata, by="lib_id")[,1:4]
     print("BREAK four!")
